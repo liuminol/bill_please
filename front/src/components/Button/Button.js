@@ -1,9 +1,9 @@
 import styles from './button.module.css'
 
-function Button () {
+function Button (props) {
   
 return (
-  <button> + </button>
+  <button> {props.name} </button>
 )
 
 }

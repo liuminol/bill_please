@@ -1,4 +1,5 @@
 import { useState, } from 'react'
+
 function useInput({ defaultValue = '', type = 'text', name = '', id = 'input' }) {
   const [value, setValue] = useState(defaultValue)
 

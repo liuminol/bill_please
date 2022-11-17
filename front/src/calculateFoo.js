@@ -1,43 +1,45 @@
-'use strict';
 
 // Список персон
 // Элемент: имя и внесенная сумма
-let persons = [
-    {
-        name: "Alex",
-        deposited: 5000,
-    },
-    {
-        name: "Ann",
-        deposited: 1500,
-    },
-    {
-        name: "Sergio",
-        deposited: 0,
-    },
-    {
-        name: "Mark",
-        deposited: 3000,
-    },
-    {
-        name: "Alice",
-        deposited: 1000,
-    },
-];
+// let persons = [
+//     {
+//         name: "Alex",
+//         sum: 5000,
+//     },
+//     {
+//         name: "Ann",
+//         sum: 1500,
+//     },
+//     {
+//         name: "Sergio",
+//         sum: 0,
+//     },
+//     {
+//         name: "Mark",
+//         sum: 3000,
+//     },
+//     {
+//         name: "Alice",
+//         sum: 1000,
+//     },
+// ];
+
+function CalcPeople(persons) {
+
 let sum = 0;
 let receivers = [];
 let debtors = [];
 
 // Получаем сумму и высчитываем среднее значение
-persons.map(person => sum += person.deposited);
+persons.map(person => sum += person.sum);
 let avg = sum / persons.length;
 
 // Рассчитываем баланс
 // Если отрицательный, значит этой персоне должны => добавляем в массив receivers
 // Если положительный, значит эта персона должник => добавляем в массив debtors
-console.log("===> Считаем баланс. Если орицательный - ему должны, положительный - он должен. Равен нуля - сбалансировано");
+// console.log("===> Считаем баланс. Если орицательный - ему должны, положительный - он должен. Равен нуля - сбалансировано");
 persons.map(person => {
-    let balance = avg - person.deposited;
+    let balance = avg - person.sum;
     balance > 0
         ?
         debtors.push(create(person, balance))
@@ -82,12 +84,17 @@ if (debtors.length === 0) {
     );
 }
 
-// Возвращает промежуточную персону для расчетов
-function create(person, balance) {
-    console.log(person.name + " " + balance);
-    return {
-        name: person.name,
-        balance: balance,
-        debts: [],
-    }
+  // Возвращает промежуточную персону для расчетов
+  function create(person, balance) {
+      console.log(person.name + " " + balance);
+      return {
+          name: person.name,
+          balance: balance,
+          debts: [],
+      }
+  }
+
 }
+
+
+export default CalcPeople
