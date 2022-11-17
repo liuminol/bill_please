@@ -1,0 +1,25 @@
+/* light */
+
+.inputfield_light {
+  margin: 10px 0px 10px;
+  height: 40px;
+  width: 250px;
+  border: 1px solid #ce86a036;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f5f1f1;
+  -webkit-box-shadow: 2px 1px 8px 0px rgba(189, 86, 145, 0.2);
+  -moz-box-shadow: 2px 1px 8px 0px rgba(189, 86, 145, 0.2);
+  box-shadow: 2px 1px 8px 0px rgba(189, 86, 145, 0.2);
+}
+
+.input_label_light {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.inputForm {
+  border: 1px solid black;
+  margin: 2px auto;
+
+}
