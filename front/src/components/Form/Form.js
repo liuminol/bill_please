@@ -8,8 +8,8 @@ function Form({id, name }) {
   const { people, setPeople } = usePeopleContext()
 
   const inputs = [
-    useInput({name: 'name', id: 'name'}),
-    useInput({name: 'sum', id: 'sum'})
+    useInput({name: 'Имя', id: 'name'}),
+    useInput({name: 'Сумма', id: 'sum'})
   ]
 
   const changeForm = (e) => {
@@ -28,7 +28,7 @@ function Form({id, name }) {
   // }, [people])
 
   return (
-    <form onChange={e=>changeForm(e)}
+    <form className={styles.inputForm} onChange={e=>changeForm(e)}
     id={id}
     name={name}
     >

@@ -29,6 +29,7 @@ function CalcPeople(persons) {
 let sum = 0;
 let receivers = [];
 let debtors = [];
+let result = ''; 
 
 // Получаем сумму и высчитываем среднее значение
 persons.map(person => sum += person.sum);
@@ -67,18 +68,24 @@ for (let r = 0; r < receivers.length; r++) {
     }
 
 }
-
+//склонение числительных !!!
+//https://snipp.ru/jquery/word-declination-js
 // Выводим результат
-console.log(" ");
-console.log("===> Выводим результат");
+// console.log(" ");
+// console.log("===> Выводим результат");
 if (debtors.length === 0) {
-    console.log("Никто никому ничего не должен");
+    // console.log("Никто никому ничего не должен");
+    result = 'Никто никому ничего не должен'
 } else {
     debtors.map(debtor => {
             if (debtor.debts.length === 0) return;
 
-            console.log(debtor.name + "! Вы должны ");
-            debtor.debts.map(debt => console.log("персоне " + debt.name + " " + debt.debt + " рублей."));
+            // console.log(debtor.name + "! Вы должны ");
+            result += debtor.name + "! Вы должны "
+            debtor.debts.map(debt => { 
+              // console.log("персоне " + debt.name + " " + debt.debt + " рублей.")
+              result += "персоне " + debt.name + " " + debt.debt + " рублей.\n"
+            });
             console.log(" ");
         }
     );
@@ -86,13 +93,14 @@ if (debtors.length === 0) {
 
   // Возвращает промежуточную персону для расчетов
   function create(person, balance) {
-      console.log(person.name + " " + balance);
+      // console.log(person.name + " " + balance);
       return {
           name: person.name,
           balance: balance,
           debts: [],
       }
   }
+return result
 
 }
 
